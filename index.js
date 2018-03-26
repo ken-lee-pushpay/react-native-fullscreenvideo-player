@@ -152,7 +152,7 @@ export default class VideoPlayer extends Component {
     this.hideControls();
 
     if(this.props.onStartPress){
-      this.props.onStartPress(this);
+      this.props.onStartPress();
     };
   }
 
@@ -221,7 +221,9 @@ export default class VideoPlayer extends Component {
     }
     else
     {
-      this.player.presentFullscreenPlayer();
+      if (this.player) {
+        this.player.presentFullscreenPlayer();
+      }
     }
   }
 
@@ -450,7 +452,11 @@ export default class VideoPlayer extends Component {
             style,
             customStyles.video,
           ]}
-          ref={p => { this.player = p; }}
+          ref={p => {
+            if (p) {
+              this.player = p;
+            }
+          }}
           muted={this.props.muted || this.state.isMuted}
           paused={!this.state.isPlaying}
           onProgress={this.onProgress}
