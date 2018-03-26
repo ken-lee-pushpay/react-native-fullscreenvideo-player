@@ -130,6 +130,12 @@ export default class VideoPlayer extends Component {
     }
   }
 
+  stop() {
+    this.setState({
+      isPlaying: false,
+    });
+  }
+
   onLayout(event) {
     const { width } = event.nativeEvent.layout;
     this.setState({
@@ -144,6 +150,10 @@ export default class VideoPlayer extends Component {
     });
 
     this.hideControls();
+
+    if(this.props.onStartPress){
+      this.props.onStartPress(this);
+    };
   }
 
   onProgress(event) {
@@ -190,6 +200,10 @@ export default class VideoPlayer extends Component {
       isPlaying: !this.state.isPlaying,
     });
     this.showControls();
+
+    if(this.props.onPlayPress) {
+      this.props.onPlayPress();
+    }
   }
 
   onMutePress() {
