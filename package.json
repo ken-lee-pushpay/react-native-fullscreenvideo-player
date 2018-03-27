@@ -15,7 +15,7 @@
   ],
   "author": "Corné Dorrestijn <contact@corne.info>",
   "license": "ISC",
-  "repository": "ken-lee-pushpay/react-native-video-player",
+  "repository": "ken-lee-pushpay/react-native-fullscreenvideo-player",
   "peerDependencies": {
     "prop-types": "*",
     "react": "*",
