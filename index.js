@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, Image, TouchableOpacity, Platform, NativeModules } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Video from 'react-native-video';
+import Video from '@leefecu/react-native-video';
 const styles = StyleSheet.create({
   preloadingPlaceholder: {
     backgroundColor: 'black',
